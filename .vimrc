@@ -1,6 +1,13 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 set number
@@ -14,3 +21,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php5']
+" php complete composer command
+let g:phpcomplete_index_composer_command = '/usr/local/bin/composer'
